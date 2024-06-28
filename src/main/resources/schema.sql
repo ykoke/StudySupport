@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS Countdown_date;
+
+CREATE TABLE Countdown_date (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    date DATE NOT NULL
+);

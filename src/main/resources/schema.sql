@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS Countdown_date;
+DROP TABLE IF EXISTS Countdown_dates;
 
-CREATE TABLE Countdown_date (
+CREATE TABLE Countdown_dates (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
+    lesson VARCHAR(100) NOT NULL,
     date DATE NOT NULL
 );

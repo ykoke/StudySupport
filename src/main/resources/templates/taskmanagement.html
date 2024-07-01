@@ -8,7 +8,28 @@
 </head>
 <body>
   <div th:replace="fragments/navbar :: navbar"></div>
-  <div class="container"></div>
+  <div class="container">
+    <h1>試験日カウンター</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>授業名</th>
+          <th>試験日</th>
+          <th>残り日数</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="task : ${lessonList}">
+          <td th:text="${task.id}"></td>
+          <td th:text="${task.lesson}"></td>
+          <td th:text="${task.date}"></td>
+          <td th:text="${task.daysUntil}"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <a href="./user.html" th:href="@{/user}">トップへ</a>
 </body>
 </html>

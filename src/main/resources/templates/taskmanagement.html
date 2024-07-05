@@ -19,6 +19,7 @@
         <th>授業名</th>
         <th>試験日</th>
         <th>残り日数</th>
+        <th>操作</th>
       </tr>
     </thead>
     <tbody>
@@ -27,7 +28,13 @@
         <td th:text="${task.lesson}"></td>
         <td th:text="${task.date}"></td>
         <td th:text="${task.daysUntil}"></td>
-    </tr>
+        <td>
+          <form th:action="@{/taskmanagement/delete/{id}(id=${task.id})}" method="post" onsubmit="return confirm('本当に削除しますか？');">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+            <input type="submit" value="削除" class="btn btn-outline-danger" />
+          </form>
+        </td>
+      </tr>
     </tbody>
   </table>
   <p th;text="${error}"></p>

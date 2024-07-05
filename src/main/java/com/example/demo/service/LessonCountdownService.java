@@ -23,4 +23,12 @@ public class LessonCountdownService {
     public void insert(LessonCountdownModel lessonCountdownModel) {
         lessonCountdownRepository.save(lessonCountdownModel);
     }
+
+    public void delete(Integer id) {
+        lessonCountdownRepository.deleteById(id);
+    }
+
+    public void update(LessonCountdownModel lessonCountdownModel) {
+        lessonCountdownRepository.save(lessonCountdownModel);
+    }
 }

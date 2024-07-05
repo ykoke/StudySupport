@@ -55,6 +55,10 @@ public class WebSecurityConfig {
             // taskmanagement.htmlの参照権限
             .requestMatchers("/taskmanagement")
             .hasAnyRole("USER")
+            .requestMatchers("/taskmanagement/form")
+            .hasAnyRole("USER")
+            .requestMatchers("/taskmanagement/form/insert")
+            .hasAnyRole("USER")
             // subjectreview.htmlの参照権限
             .requestMatchers("/subjectreview")
             .hasAnyRole("USER"));

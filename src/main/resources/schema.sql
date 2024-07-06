@@ -5,3 +5,12 @@ CREATE TABLE Countdown_dates (
     lesson VARCHAR(100) NOT NULL,
     date DATE NOT NULL
 );
+
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    role VARCHAR(100) NOT NULL
+);

@@ -20,15 +20,15 @@ public class LessonCountdownService {
         return lessonCountdownRepository.findAll();
     }
 
-    public void insert(LessonCountdownModel lessonCountdownModel) {
+    public void countdowninsert(LessonCountdownModel lessonCountdownModel) {
         lessonCountdownRepository.save(lessonCountdownModel);
     }
 
-    public void delete(Integer id) {
+    public void countdowndelete(Integer id) {
         lessonCountdownRepository.deleteById(id);
     }
 
-    public void update(LessonCountdownModel lessonCountdownModel) {
+    public void countdownupdate(LessonCountdownModel lessonCountdownModel) {
         lessonCountdownRepository.save(lessonCountdownModel);
     }
 }

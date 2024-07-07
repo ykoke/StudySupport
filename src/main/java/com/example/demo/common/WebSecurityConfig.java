@@ -55,11 +55,20 @@ public class WebSecurityConfig {
             // taskmanagement.htmlの参照権限
             .requestMatchers("/taskmanagement")
             .hasAnyRole("USER")
-            .requestMatchers("/taskmanagement/form")
+            .requestMatchers("/taskmanagement/countdownform")
             .hasAnyRole("USER")
-            .requestMatchers("/taskmanagement/form/insert")
+            .requestMatchers("/taskmanagement/countdownform/countdowninsert")
             .hasAnyRole("USER")
-            .requestMatchers("/taskmanagement/delete/{id}")
+            .requestMatchers("/taskmanagement/countdowndelete/{id}")
+            .hasAnyRole("USER")
+            //todoの参照権限
+            .requestMatchers("/todo")
+            .hasAnyRole("USER")
+            .requestMatchers("/todo/todoform")
+            .hasAnyRole("USER")
+            .requestMatchers("/todo/todoform/todoinsert")
+            .hasAnyRole("USER")
+            .requestMatchers("/todo/tododelete/{id}")
             .hasAnyRole("USER")
             // subjectreview.htmlの参照権限
             .requestMatchers("/subjectreview")

@@ -10,22 +10,22 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.demo.model.LessonCountdownModel;
-import com.example.demo.service.LessonCountdownService;
+import com.example.demo.model.TodoModel;
+import com.example.demo.service.TodoService;
 
 @Controller
 @RequestMapping("")
-public class TaskManagementController {
+public class TodoController {
   @Autowired
-  private LessonCountdownService lessonCountdownService;
-  @GetMapping("/taskmanagement")
+  private TodoService todoService;
+  @GetMapping("/todo")
   public String taskManageTop(Model model) {
     try {
-      List<LessonCountdownModel> lessonCountdownList = lessonCountdownService.listAll();
+      List<TodoModel> todoList = todoService.listAll();
       
 
-      if(lessonCountdownList != null) {
-        model.addAttribute("lessonList", lessonCountdownList);
+      if(todoList != null) {
+        model.addAttribute("todoList", todoList);
       } else {
         model.addAttribute("error", "No data found");
       }
@@ -33,35 +33,34 @@ public class TaskManagementController {
       catch (Exception e) {
       model.addAttribute("error", "An error occurred" + e.getMessage());
     }
-    return "taskmanagement";
+    return "todo";
   }
 
-    @GetMapping("/taskmanagement/countdownform")
-  public String taskForm(Model model) {
-    model.addAttribute("lessonCountdownModel", new LessonCountdownModel());
-    return "countdownform";
+    @GetMapping("/todo/todoform")
+  public String todoForm(Model model) {
+    model.addAttribute("TodoModel", new TodoModel());
+    return "todoform";
   }
 
 
 
-  @PostMapping("/taskmanagement/countdownform/countdowninsert")
-  public String lessonInsert(LessonCountdownModel lessonCountdownModel, Model model) {
+  @PostMapping("/todo/todoform/todoinsert")
+  public String todoInsert(TodoModel todoModel, Model model) {
     try {
-      lessonCountdownService.countdowninsert(lessonCountdownModel);
+      todoService.todoinsert(todoModel);
     } catch (Exception e) {
       model.addAttribute("error", "An error occurred" + e.getMessage());
     }
-    return "redirect:/taskmanagement";
+    return "redirect:/todo";
   }
 
-  @PostMapping("/taskmanagement/countdowndelete/{id}")
+  @PostMapping("/todo/tododelete/{id}")
   public String lessonDelete(@PathVariable("id") Integer id, Model model) {
     try {
-      lessonCountdownService.countdowndelete(id);
+      todoService.tododelete(id);
     } catch (Exception e) {
       model.addAttribute("error", "An error occurred" + e.getMessage());
     }
-    return "redirect:/taskmanagement";
+    return "redirect:/todo";
   }
-
 }

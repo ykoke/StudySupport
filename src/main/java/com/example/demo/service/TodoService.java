@@ -20,7 +20,11 @@ public class TodoService {
         return TodoRepository.findAll();
     }
 
-    public void insert(TodoModel TodoModel) {
+    public void todoinsert(TodoModel TodoModel) {
         TodoRepository.save(TodoModel);
+    }
+    
+    public void tododelete(Integer id) {
+        TodoRepository.deleteById(id);
     }
 }

@@ -15,7 +15,7 @@ public class TodoModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-    @Column(name = "task")
-    private String task;
+    @Column(name = "todo")
+    private String todo;
 
 }

@@ -1,11 +1,4 @@
 DROP TABLE IF EXISTS Countdown_dates;
-
-CREATE TABLE Countdown_dates (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    lesson VARCHAR(100) NOT NULL,
-    date DATE NOT NULL
-);
-
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
@@ -13,4 +6,12 @@ CREATE TABLE users (
     username VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL,
     role VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Countdown_dates (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    lesson VARCHAR(100) NOT NULL,
+    date DATE NOT NULL,
+    user_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id)
 );

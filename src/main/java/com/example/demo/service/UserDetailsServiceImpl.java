@@ -10,8 +10,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.repository.UserRepository;
 import com.example.demo.model.UserModel;
+import com.example.demo.repository.UserRepository;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -29,6 +29,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         anthorities.add((GrantedAuthority) () -> "ROLE_" + user.getRole());
 
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), anthorities);
+    }
+
+    public UserModel getUser(String username) {
+        return userRepository.findByUsername(username);
     }
 
 }

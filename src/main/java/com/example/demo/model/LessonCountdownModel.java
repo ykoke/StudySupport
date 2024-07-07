@@ -23,6 +23,8 @@ public class LessonCountdownModel {
     private String lesson;
     @Column(name = "date")
     private LocalDate date;
+    @Column(name = "user_id")
+    private Integer userId;
 
     public long getDaysUntil() {
         LocalDate now = LocalDate.now();

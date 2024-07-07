@@ -20,6 +20,10 @@ public class LessonCountdownService {
         return lessonCountdownRepository.findAll();
     }
 
+    public List<LessonCountdownModel> listByUserId(Integer userId) {
+        return lessonCountdownRepository.findByUserId(userId);
+    }
+
     public void insert(LessonCountdownModel lessonCountdownModel) {
         lessonCountdownRepository.save(lessonCountdownModel);
     }

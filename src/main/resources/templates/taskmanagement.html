@@ -19,6 +19,7 @@
         <th>授業名</th>
         <th>試験日</th>
         <th>残り日数</th>
+        <th>操作</th>
       </tr>
     </thead>
     <tbody>
@@ -27,6 +28,11 @@
         <td th:text="${task.lesson}"></td>
         <td th:text="${task.date}"></td>
         <td th:text="${task.daysUntil}"></td>
+        <td>
+          <form th:action="@{/taskmanagement/delete}" method="post">
+            <input type="hidden" name="id" th:value="${task.id}">
+            <button type="submit" class="btn btn-outline-danger">削除</button>
+        </td>
     </tr>
     </tbody>
   </table>

@@ -56,6 +56,7 @@ public class WebSecurityConfig {
             .authorizeHttpRequests(authz -> authz
                 .requestMatchers("/").permitAll()
                 .requestMatchers("/top", "/user", "/taskmanagement/**", "/subjectreview").hasAnyRole("USER")
+                .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
                 .anyRequest().authenticated());
         return http.build();
     }

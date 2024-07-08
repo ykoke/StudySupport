@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <style>
-    .navbar-nav .nav-link {
+    .navbar-nav .nav-link .nav-name {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -20,6 +20,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" th:href="@{/subjectreview}">講義のレビュー</a>
+            </li>
+            <li class="nav-item ml-auto">
+              <span class="nav-name" th:text="'こんにちは ' + ${#authentication.principal.username} + 'さん'"></span>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./logout.html" th:href="@{/logout}">ログアウト</a>

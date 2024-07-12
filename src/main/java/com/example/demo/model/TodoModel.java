@@ -17,5 +17,7 @@ public class TodoModel {
     private Integer id;
     @Column(name = "task")
     private String task;
+    @Column(name = "user_id")
+    private Integer userId;
 
 }

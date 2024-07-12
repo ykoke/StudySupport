@@ -35,4 +35,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return userRepository.findByUsername(username);
     }
 
+    public UserModel getUserById(Integer id) {
+        return userRepository.findById(id).get();
+    }
+
 }

@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.LessonCountdownModel;
 import com.example.demo.model.TodoModel;
 import com.example.demo.model.UserModel;
 import com.example.demo.repository.TodoRepository;
@@ -25,7 +24,7 @@ public class TodoService {
         return TodoRepository.findAll();
     }
 
-     public List<LessonCountdownModel> listByUserId(Integer userId) {
+    public List<TodoModel> listByUserId(Integer userId) {
         return TodoRepository.findByUserId(userId);
     }
 

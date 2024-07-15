@@ -11,7 +11,29 @@
 
 <body>
   <div th:replace="fragments/navbar :: navbar"></div>
-  <div class="container"></div>
+  <div class="container">
+
+    <h3>
+      授業の口コミ
+      <small class="text-body-secondary">/授業の口コミはここで</small>
+    </h3>
+  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>授業名</th>
+          <th>教授名</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="course : ${courses}">
+          <td th:text="${course.name}"></td>
+          <td th:text="${course.instructor}"></td>
+          <td><a th:href="@{'/subjectreview/' + ${course.id} + '/reviews'}">口コミを見る</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 
 </html>

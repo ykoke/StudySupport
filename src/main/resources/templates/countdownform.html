@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h2 class="mt-4">授業登録</h2>
-        <form th:action="@{/taskmanagement/countdownform/countdowninsert}" th:object="${lessonCountdownModel}" method="post">
+        <form th:action="@{/lessoncountdown/countdownform/countdowninsert}" th:object="${lessonCountdownModel}" method="post">
             <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
             <div class="form-group">
                 <label for="lesson">科目名</label>

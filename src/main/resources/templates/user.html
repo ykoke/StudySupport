@@ -1,43 +1,54 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=3.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ユーザーページ</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-
 <body>
   <div th:replace="fragments/navbar :: navbar"></div>
-  <div class="container"></div>
-  <div class="card-deck">
-  <div class="card" style="width: 18rem;">
-  <span class="border">
-    <div class="card-body">
-      <h5 class="card-title">試験管理</h5>
-      <p class="card-text">試験カウントダウン</p>
-      <a th:href="@{/taskmanagement}" class="btn btn-primary">試験管理</a>
+  <div class="container mt-4">
+    <h2>S/S/A(StudySupportApp)へようこそ！</h2>
+    <p class = "lead">試験カウントダウンリスト・todoリスト・授業の口コミ・チャット</p>
+    <div class="row">
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">試験管理</h5>
+            <p class="card-text">試験カウントダウン</p>
+            <a th:href="@{/lessoncountdown}" class="btn btn-primary">試験管理</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">学習進捗管理</h5>
+            <p class="card-text">todoリスト</p>
+            <a th:href="@{/todo}" class="btn btn-primary">学習進捗管理</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">授業の口コミ</h5>
+            <p class="card-text">授業の口コミはここから</p>
+            <a th:href="@{/subjectreview}" class="btn btn-primary">授業の口コミ</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">友達とチャット</h5>
+            <p class="card-text">チャットはここで！</p>
+            <a th:href="@{/chat}" class="btn btn-primary">チャット</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="card-body">
-      <h5 class="card-title">学習進捗管理</h5>
-      <p class="card-text">todoリスト</p>
-      <a th:href="@{/todo}" class="btn btn-primary">学習進捗管理</a>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">授業の口コミ</h5>
-      <p class="card-text">授業の口コミはここから</p>
-      <a th:href="@{/subjectreview}" class="btn btn-primary">授業の口コミ</a>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">友達とチャット</h5>
-      <p class="card-text">チャットはここで！</p>
-      <a th:href="@{/chat}" class="btn btn-primary">チャット</a>
-    </div>
-    </span>
   </div>
-  </div>
-  
 </body>
-
 </html>

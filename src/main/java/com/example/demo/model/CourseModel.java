@@ -1,4 +1,5 @@
 package com.example.demo.model;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,15 +10,14 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Todo_lists")
-public class TodoModel {
+@Table(name = "Courses")
+public class CourseModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-    @Column(name = "todo")
-    private String todo;
-    @Column(name = "userid")
-    private Integer userId;
-
+    @Column(name = "name")
+    private String name;
+    @Column(name = "instructor")
+    private String instructor;
 }

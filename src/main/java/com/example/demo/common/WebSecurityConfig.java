@@ -55,54 +55,10 @@ public class WebSecurityConfig {
                 .permitAll())
             .authorizeHttpRequests(authz -> authz
                 .requestMatchers("/").permitAll()
-                .requestMatchers("/top", "/user", "/taskmanagement/**", "/subjectreview").hasAnyRole("USER")
+                .requestMatchers("/top", "/user", "/taskmanagement/**", "/subjectreview", "/chat", "/ws/**").hasAnyRole("USER")
                 .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
                 .anyRequest().authenticated());
         return http.build();
     }
-
-  /* @Bean
-  InMemoryUserDetailsManager userDetailsService() {
-    // ユーザー設定
-    UserDetails user = User
-        .withUsername("user")
-        .password(passwordEncoder().encode("12345"))
-        .roles("USER")
-        .build();
-    return new InMemoryUserDetailsManager(user);
-  } */
-
-  /* @Bean
-  public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-
-    http
-        // ログインページの許可設定
-        .formLogin(login -> login // フォーム認証を使う
-            .defaultSuccessUrl("/user") // 認証成功時のデフォルトの遷移先
-            .permitAll())
-
-        // リクエストの許可設定
-        .authorizeHttpRequests(authz -> authz
-            // index.html の参照権限
-            .requestMatchers("/")
-            .permitAll()
-            // top.htmlのの参照権限
-            .requestMatchers("/top")
-            .hasAnyRole("USER")
-            // user.html の参照権限
-            .requestMatchers("/user")
-            .hasAnyRole("USER")
-            // taskmanagement.htmlの参照権限
-            .requestMatchers("/taskmanagement")
-            .hasAnyRole("USER")
-            .requestMatchers("/taskmanagement/form")
-            .hasAnyRole("USER")
-            .requestMatchers("/taskmanagement/form/insert")
-            .hasAnyRole("USER")
-            // subjectreview.htmlの参照権限
-            .requestMatchers("/subjectreview")
-            .hasAnyRole("USER"));
-    return http.build();
-  } */
 
 }

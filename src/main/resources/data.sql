@@ -8,5 +8,3 @@ INSERT INTO Countdown_dates (lesson, date, user_id) VALUES ('メディアデザ�
 INSERT INTO Courses (name, instructor) VALUES ('ネットワークプログラミング', '岩井');
 INSERT INTO Courses (name, instructor) VALUES ('データベースプログラミング演習', '増田');
 INSERT INTO Courses (name, instructor) VALUES ('メディアデザイン', '井ノ上');
-
-INSERT INTO Reviews (course_id, rating, review) VALUES (1, 5, 'とてもわかりやすかった');

@@ -31,7 +31,7 @@ CREATE TABLE Reviews (
     rating INT NOT NULL,
     review TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (course_id) REFERENCES Course(id)
+    FOREIGN KEY (course_id) REFERENCES Courses(id)
 );
 
 CREATE TABLE Todo (

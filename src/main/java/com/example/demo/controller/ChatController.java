@@ -15,9 +15,13 @@ import com.example.demo.model.ChatMessageModel;
 @Controller
 public class ChatController {
 
-    @MessageMapping("/caht.sendMessage")
+    @MessageMapping("/chat.sendMessage")
     @SendTo("/topic/public")
     public ChatMessageModel sendMessage(@Payload ChatMessageModel chatMessage) {
+        if (chatMessage.getImage() != null) {
+            String imgTag = "<img src='" + chatMessage.getImage() + "' alt='Image from " + chatMessage.getSender() + "' />";
+            chatMessage.setContent(chatMessage.getContent() + imgTag); // 画像タグをメッセージに追加
+        }
         return chatMessage;
     }
 

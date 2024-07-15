@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import lombok.Data;
 
 @Data
@@ -15,5 +16,8 @@ public class ChatMessageModel {
     
     private String content;
     private String sender;
+
+    @Lob
+    private String image;
 
 }

@@ -24,9 +24,6 @@ public class LessonCountdownController {
   @Autowired
   private LessonCountdownService lessonCountdownService;
 
-  //@Autowired
-  //private LessonCountdownRepository lessonCountdownRepository;
-
   @Autowired
   private UserRepository userRepository;
 

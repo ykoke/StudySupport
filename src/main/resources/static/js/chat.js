@@ -51,7 +51,7 @@ function sendMessage() {
             stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(chatMessage));
             messageInput.value = '';
 
-            var messageElement = document.createElement('li');
+            /* var messageElement = document.createElement('li');
             messageElement.innerHTML = "<b>" + chatMessage.sender + ":</b> " + chatMessage.content;
             if (chatMessage.image) {
                 var breakElement = document.createElement('br'); // 改行要素を作成
@@ -61,7 +61,7 @@ function sendMessage() {
                 imageElement.src = chatMessage.image;
                 messageElement.appendChild(imageElement);
             }
-            document.getElementById('message-container').appendChild(messageElement);
+            document.getElementById('message-container').appendChild(messageElement); */
         }
     }
     

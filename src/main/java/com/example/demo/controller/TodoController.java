@@ -50,7 +50,7 @@ public class TodoController {
   @PostMapping("/todo/todoform/todoinsert")
   public String todoInsert(TodoModel todoModel, Model model) {
     try {
-     Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+      Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username;
         if (principal instanceof UserDetails) {
             username = ((UserDetails)principal).getUsername();

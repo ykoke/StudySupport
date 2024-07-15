@@ -9,15 +9,16 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Todo_lists")
-public class TodoModel {
+@Table(name = "users")
+public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-    @Column(name = "todo")
-    private String todo;
-    @Column(name = "userid")
-    private Integer userId;
-
+    @Column(name = "username")
+    private String username;
+    @Column(name = "password")
+    private String password;
+    @Column(name = "role")
+    private String role;
 }

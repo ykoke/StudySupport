@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "countdown_dates")
+@Table(name = "Countdown_dates")
 public class LessonCountdownModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

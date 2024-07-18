@@ -14,7 +14,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "reviews")
+@Table(name = "Reviews")
 public class ReviewModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

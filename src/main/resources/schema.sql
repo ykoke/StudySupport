@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS Countdown_dates;
-DROP TABLE IF EXISTS Todo_lists;
-DROP TABLE IF EXISTS Reviews;
+DROP TABLE IF EXISTS countdown_dates;
+DROP TABLE IF EXISTS todo_lists;
+DROP TABLE IF EXISTS reviews;
 DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS Courses;
+DROP TABLE IF EXISTS courses;
 
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -11,22 +11,22 @@ CREATE TABLE users (
     role VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE Courses (
+CREATE TABLE courses (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     instructor VARCHAR(50)
 );
 
-CREATE TABLE Reviews (
+CREATE TABLE reviews (
     id INT PRIMARY KEY AUTO_INCREMENT,
     course_id INT NOT NULL,
     rating INT NOT NULL,
     review TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (course_id) REFERENCES Courses(id)
+    FOREIGN KEY (course_id) REFERENCES courses(id)
 );
 
-CREATE TABLE Countdown_dates (
+CREATE TABLE countdown_dates (
     id INT PRIMARY KEY AUTO_INCREMENT,
     lesson VARCHAR(100) NOT NULL,
     date DATE NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE Countdown_dates (
     FOREIGN KEY (userid) REFERENCES users(id)
 );
 
-CREATE TABLE Todo_lists (
+CREATE TABLE todo_lists (
     id INT PRIMARY KEY AUTO_INCREMENT,
     todo VARCHAR(100) NOT NULL,
     userid INT NOT NULL,

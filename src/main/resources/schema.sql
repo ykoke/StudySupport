@@ -1,3 +1,7 @@
+DROP TABLE IF EXISTS Countdown_dates;
+DROP TABLE IF EXISTS Todo_lists;
+DROP TABLE IF EXISTS Reviews;
+DROP TABLE IF EXISTS Courses;
 DROP TABLE IF EXISTS countdown_dates;
 DROP TABLE IF EXISTS todo_lists;
 DROP TABLE IF EXISTS reviews;

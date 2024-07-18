@@ -14,7 +14,10 @@ import org.springframework.stereotype.Service;
 import com.example.demo.model.UserModel;
 import com.example.demo.repository.UserRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
+@Transactional
 public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;

@@ -1,7 +1,6 @@
 DROP TABLE IF EXISTS countdown_dates;
 DROP TABLE IF EXISTS todo_lists;
 DROP TABLE IF EXISTS reviews;
-DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS courses;
 
 CREATE TABLE users (

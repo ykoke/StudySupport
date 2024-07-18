@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Todo_lists")
+@Table(name = "todo_lists")
 public class TodoModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
